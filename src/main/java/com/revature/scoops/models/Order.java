@@ -1,76 +1,51 @@
 package com.revature.scoops.models;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+
 public class Order {
-    private int id;
-    private String menuItem;
-    private String comment;
-    private boolean is_favorite;
-    private String order_date;
-    private String customerUsername;
+    private String itemName;
+    private int cost;
+    private String color;
 
-    public Order(int id, String menuItem, String comment, boolean is_favorite, String order_date, String customerUsername){
+    public Order(String itemName, int cost, String color){
         super();
-        this.id =id;
-        this.menuItem=menuItem;
-        this.comment=comment;
-        this.is_favorite=is_favorite;
-        this.order_date=order_date;
-        this.customerUsername=customerUsername;
+        this.itemName = itemName;
+        this.cost = cost;
+        this.color = color;
     }
-    public Order(){
+    public Order (){
 
     }
 
-    public int getId() {
-        return id;
+    public int getCost() {
+        return cost;
     }
 
-    public String getComment() {
-        return comment;
+    public String getColor() {
+        return color;
     }
 
-    public String getCustomerUsername() {
-        return customerUsername;
+    public String getItemName() {
+        return itemName;
     }
 
-    public String getMenuItem() {
-        return menuItem;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public void setCustomerUsername(String customerUsername) {
-        this.customerUsername = customerUsername;
-    }
-
-    public void setIs_favorite(boolean is_favorite) {
-        this.is_favorite = is_favorite;
-    }
-
-    public void setMenuItem(String menuItem) {
-        this.menuItem = menuItem;
-    }
-
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
-    }
     @Override // What this is?? Annotation - basically metadata
     public String toString() {
         return
-                "id: " + id + '\'' +
-                        "menuItem: " + menuItem + '\'' +
-                        "| is_favorite: " + is_favorite + '\'' +
-                        "| order_date: " + order_date + '\'' +
-                        "| customerUsername: " + customerUsername + '\'';
+                "itemName: " + itemName + '\'' +
+                        "cost: " + cost + '\'' +
+                        "| color: " + color + '\'';
     }
 }
