@@ -11,56 +11,70 @@ public class CreditCard {
     private int limit;
 
 
-    public String CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, String customer_username, int limit) {
+    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, String customer_username, int limit) {
+        super();
+        this.cc_name = cc_name;
+        this.cc_number = cc_number;
+        this.cvv =cvv;
+        this.exp_date =exp_date;
+        this.zip=zip;
+        this.customer_username=customer_username;
+        this.limit=limit;
+    }
 
-        public CreditCard() {
+    public int getCvv() {
+        return cvv;
+    }
 
-            public String getCCNumber() {
-                return cc_number;
-            }
-            public String getCC_name () {
-                return cc_number;
-            }
-            public int getCvv () {
-                return cvv;
-            }
-            public String getExp_date () {
-                return exp_date;
-            }
-            public int getZip () {
-                return zip;
-            }
-            public String getCustomer_username () {
-                return customer_username;
-            }
-            public int getLimit () {
-                return limit;
-            }
-            public CreditCard() {
+    public int getLimit() {
+        return limit;
+    }
 
-                public String setCCNumber () {
-                    this.cc_number;
-                }
-                public String setCC_name () {
-                    return cc_name;
-                }
-                public int setCvv () {
-                    this.cvv;
-                }
-                public String setExp_date () {
-                    this.exp_date;
-                }
-                public int setZip () {
-                    this.zip;
-                }
-                public String setCustomer_username () {
-                    this.customer_username;
-                }
-                public int setLimit () {
-                    this.limit;
-                }
+    public int getZip() {
+        return zip;
+    }
 
-            }
-        }
+    public String getCc_name() {
+        return cc_name;
+    }
+
+    public String getCc_number() {
+        return cc_number;
+    }
+
+    public String getCustomer_username() {
+        return customer_username;
+    }
+
+    public String getExp_date() {
+        return exp_date;
+    }
+
+    public void setCc_name(String cc_name) {
+        this.cc_name = cc_name;
+    }
+
+    public void setCc_number(String cc_number) {
+        this.cc_number = cc_number;
+    }
+
+    public void setCustomer_username(String customer_username) {
+        this.customer_username = customer_username;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
+    }
+
+    public void setExp_date(String exp_date) {
+        this.exp_date = exp_date;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public void setZip(int zip) {
+        this.zip = zip;
     }
 }
