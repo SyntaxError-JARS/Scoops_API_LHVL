@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="fixed errors in cc class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/Crudable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653341847942</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu.">
+      <created>1653422409917</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653422409917</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +122,7 @@
     <MESSAGE value="Added class Order and Customer" />
     <MESSAGE value="Fixed menu class and Added order Class" />
     <MESSAGE value="fixed errors in cc class" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed errors in cc class" />
+    <MESSAGE value="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
   </component>
 </project>
