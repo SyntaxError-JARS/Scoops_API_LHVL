@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added hibernate ConnectionFactory" />
+    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="fixed errors in cc class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/Crudable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -24,6 +29,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,7 +58,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Levi/Desktop/Revature/P_Projects/P0_Recovered&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Levi/Desktop/Revature/P_Projects/P1_Scoops/Scoops_API_LHVL&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,14 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653077710797</updated>
     </task>
-    <task id="LOCAL-00002" summary="Fixed menu class and Added order Class">
-      <created>1653337518665</created>
+    <task id="LOCAL-00002" summary="fixed errors in cc class">
+      <created>1653341847942</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1653337518665</updated>
+      <updated>1653341847942</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added class Order and Customer" />
     <MESSAGE value="Fixed menu class and Added order Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed menu class and Added order Class" />
+    <MESSAGE value="fixed errors in cc class" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed errors in cc class" />
   </component>
 </project>
