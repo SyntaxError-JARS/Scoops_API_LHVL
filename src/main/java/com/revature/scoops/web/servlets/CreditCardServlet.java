@@ -1,4 +1,6 @@
 package com.revature.scoops.web.servlets;
 
-public class CreditCardServlet {
+import javax.servlet.http.HttpServlet;
+
+public class CreditCardServlet extends HttpServlet {
 }

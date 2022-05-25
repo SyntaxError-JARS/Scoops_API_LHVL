@@ -1,4 +1,6 @@
 package com.revature.scoops.web.servlets;
 
-public class MenuServlet {
+import javax.servlet.http.HttpServlet;
+
+public class MenuServlet extends HttpServlet {
 }
