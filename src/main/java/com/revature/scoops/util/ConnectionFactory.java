@@ -4,6 +4,11 @@ import com.revature.scoops.models.CreditCard;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.models.Menu;
 import com.revature.scoops.models.Order;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 
 import java.io.IOException;
