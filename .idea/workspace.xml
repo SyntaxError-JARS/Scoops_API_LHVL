@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/exceptions/AuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/exceptions/InvalidRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/exceptions/ResourcePersistanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/logging/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/dto/LoginCreds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/ContextLoaderListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added Azure Connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/TestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/TestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,14 +53,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Levi/Desktop/Revature/P_Projects/P1_Scoops/Scoops_API_LHVL/src/main/java/com/revature/scoops/util"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Levi/Desktop/Revature/P_Projects/P1_Scoops/Scoops_API_LHVL/src/main/java/com/revature/scoops/util&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Levi\Desktop\Revature\P_Projects\P1_Scoops\Scoops_API_LHVL\src\main\java\com\revature\scoops\util" />
@@ -190,6 +173,7 @@
     <MESSAGE value="Fixed menu class and Added order Class" />
     <MESSAGE value="fixed errors in cc class" />
     <MESSAGE value="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
+    <MESSAGE value="Added Azure Connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Azure Connection" />
   </component>
 </project>
