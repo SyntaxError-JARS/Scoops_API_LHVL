@@ -1,4 +1,6 @@
 package com.revature.scoops.web.servlets;
 
-public class OrderServlet {
+import javax.servlet.http.HttpServlet;
+
+public class OrderServlet extends HttpServlet {
 }
