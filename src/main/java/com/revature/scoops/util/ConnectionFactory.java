@@ -1,5 +1,6 @@
 package com.revature.scoops.util;
 
+
 import com.revature.scoops.models.CreditCard;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.models.Menu;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConnectionFactory {
+
     private static SessionFactory sessionFactory;
     private static Session session;
 
@@ -21,15 +23,30 @@ public class ConnectionFactory {
         if(sessionFactory == null) {
             Configuration configuration = new Configuration();
             Properties props = new Properties();
-            ClassLoader loader = Thread.currentThread().getContextClassLoader();
-            props.load(loader.getResourceAsStream("hibernate.properties"));
+            String url = System.getenv("SQLAZURECONNSTR_PokeProjectDB");
+            String username = System.getenv("DBUSER");
+            String password = System.getenv("DBPASS");
+
+/*hibernate.dialect=org.hibernate.dialect.SQLServerDialect
+hibernate.connection.driver_class=com.microsoft.sqlserver.jdbc.SQLServerDriver
+hibernate.show_sql=true
+# leverage create once and update thereafter
+hibernate.hbm2ddl.auto=update*/
+
+            configuration.setProperty("hibernate.connection.url", url);
+            configuration.setProperty("hibernate.connection.username", username);
+            configuration.setProperty("hibernate.connection.password", password);
+            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
+            configuration.setProperty("hibernate.connection.driver_class", "com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            configuration.setProperty("hibernate.show_sql", "true");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
 
             // Add properties to our configuration
-            configuration.setProperties(props);
+//            configuration.setProperties(props);
             // ONE ADDITIONAL STEP I NEED TO INCLUDE
-            configuration.addAnnotatedClass(Order.class);
-            configuration.addAnnotatedClass(Menu.class);
             configuration.addAnnotatedClass(Customer.class);
+            configuration.addAnnotatedClass(Menu.class);
+            configuration.addAnnotatedClass(Order.class);
             configuration.addAnnotatedClass(CreditCard.class);
 
             // ServiceRegistry
@@ -52,4 +69,3 @@ public class ConnectionFactory {
 
     }
 }
-
