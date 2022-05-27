@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added Azure Connection">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/Authable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/LoginCreds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/MyAccount.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/bankoflevi copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/bankoflevi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/images/bankoflevi2.jpg" afterDir="false" />
+    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Fixed some issues with Azure connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653423618926</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed some issues with Azure connection">
+      <created>1653664308231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653664308231</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +181,7 @@
     <MESSAGE value="fixed errors in cc class" />
     <MESSAGE value="Added interface for CRUD. Added DAO methods for creditcard, customer, and menu." />
     <MESSAGE value="Added Azure Connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Azure Connection" />
+    <MESSAGE value="Fixed some issues with Azure connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some issues with Azure connection" />
   </component>
 </project>
