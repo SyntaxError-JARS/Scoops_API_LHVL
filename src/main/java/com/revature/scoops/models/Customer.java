@@ -1,21 +1,27 @@
 package com.revature.scoops.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
+@Entity
+@Table(name = "Customer")
 public class Customer {
+    @Id
     private String username;
     private String fName;
     private String lName;
     private String password;
     private int balance;
-    private boolean isAdmin;
+    private int is_Admin;
 
-    public Customer(String username, String fName, String lName, String password, int balance, boolean isAdmin){
+    public Customer(String username, String fName, String lName, String password, int balance, int isAdmin){
         super();
         this.username =  username;
         this.fName = fName;
         this.lName = lName;
         this.password = password;
         this.balance = balance;
-        this.isAdmin = isAdmin;
+        this.is_Admin = isAdmin;
     }
 
     public Customer(){
@@ -54,8 +60,12 @@ public class Customer {
         this.username = username;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setIsAdmin(int isAdmin) {
+        this.is_Admin = isAdmin;
+    }
+
+    public int getIsAdmin() {
+        return is_Admin;
     }
 
     public void setfName(String fName) {
@@ -72,7 +82,7 @@ public class Customer {
                 "First Name: " + fName + '\'' +
                         "| Last Name: " + lName + '\'' +
                         "| Balance: " + balance + '\'' +
-                        "| isAdmin: " + isAdmin + '\'' +
+                        "| isAdmin: " + is_Admin + '\'' +
                         "| Password: " + password + '\'';
     }
 

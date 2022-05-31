@@ -1,5 +1,6 @@
 package com.revature.scoops.daos;
 
+import com.revature.scoops.models.Order;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.util.ConnectionFactory;
 import org.hibernate.HibernateException;
@@ -11,13 +12,13 @@ import java.io.*;
 import java.util.List;
 public class OrderDao {
 
-    public Customer create(Customer newCustomer) {
+    public Order create(Order newOrder) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            session.save(newCustomer);
+            session.save(newOrder);
             transaction.commit();
-            return newCustomer;
+            return newOrder;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
             return null;
@@ -27,13 +28,13 @@ public class OrderDao {
     }
 
 
-    public List<Customer> findAll() {
+    public List<Order> findAll() {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            List<Customer> trainers = session.createQuery("FROM Trainer").list();
+            List<Order> orders = session.createQuery("FROM Order").list();
             transaction.commit();
-            return trainers;
+            return orders;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
             return null;
@@ -44,14 +45,14 @@ public class OrderDao {
     }
 
 
-    public Customer findById(String email) {
+    public Order findById(String email) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Customer trainer = session.get(Customer.class, email);
+            Order order = session.get(Order.class, email);
             transaction.commit();
-            return trainer;
+            return order;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
             return null;
@@ -60,11 +61,11 @@ public class OrderDao {
         }
 
     }
-    public boolean update(Customer updatedTrainer) {
+    public boolean update(Order updatedOrder) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            session.merge(updatedTrainer);
+            session.merge(updatedOrder);
             transaction.commit();
             return true;
         } catch (HibernateException | IOException e) {
@@ -80,8 +81,8 @@ public class OrderDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Customer trainer = session.load(Customer.class, email);
-            session.remove(trainer);
+            Order order = session.load(Order.class, email);
+            session.remove(order);
             transaction.commit();
             return true;
         } catch (HibernateException | IOException e) {
@@ -92,17 +93,17 @@ public class OrderDao {
         }
     }
 
-    public Customer authenticateTrainer(String email, String password){
+    public Order authenticateOrder(String email, String password){
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Trainer where email= :email and password= :password");
+            Query query = session.createQuery("from Order where email= :email and password= :password");
             query.setParameter("email", email);
             query.setParameter("password", password);
-            Customer trainer = (Customer) query.uniqueResult();
+            Order order = (Order) query.uniqueResult();
             transaction.commit();
-            return trainer;
+            return order;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
             return null;
@@ -116,11 +117,11 @@ public class OrderDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Trainer where email= :email");
+            Query query = session.createQuery("from Order where email= :email");
             query.setParameter("email", email);
-            Customer trainer = (Customer) query.uniqueResult();
+            Order order = (Order) query.uniqueResult();
             transaction.commit();
-            if(trainer == null) return false;
+            if(order == null) return false;
             return true;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();

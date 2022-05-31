@@ -11,8 +11,7 @@ import com.revature.scoops.service.CreditCardServices;
 import com.revature.scoops.service.CustomerServices;
 import com.revature.scoops.service.MenuServices;
 import com.revature.scoops.service.OrderServices;
-import com.revature.scoops.web.servlets.AuthServlet;
-import com.revature.scoops.web.servlets.CustomerServlet;
+import com.revature.scoops.web.servlets.*;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
@@ -39,13 +38,19 @@ public class ContextLoaderListener implements ServletContextListener {
 
         AuthServlet authServlet = new AuthServlet(customerServices, mapper);
         CustomerServlet customerServlet = new CustomerServlet(customerServices, mapper);
+        MenuServlet menuServlet = new MenuServlet(menuServices,mapper);
+        OrderServlet orderServlet = new OrderServlet(orderServices, mapper);
+        CreditCardServlet creditCardServlet = new CreditCardServlet(creditCardServices, mapper);
+
 
 
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
-        //context.addServlet("CustomerServlet", customerServlet).addMapping("/customers/*");
+        context.addServlet("OrderServlet", orderServlet).addMapping("/orders/*");
         context.addServlet("CustomerServlet", customerServlet).addMapping("/customers/*");
+        context.addServlet("Menu", menuServlet).addMapping("/Menu/*");
+        context.addServlet("CreditCard", creditCardServlet).addMapping("/CreditCard/*");
 
     }
 

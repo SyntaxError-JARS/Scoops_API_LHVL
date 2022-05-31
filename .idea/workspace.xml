@@ -6,8 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Fixed some issues with Azure connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CreditCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CreditCardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/MenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/ContextLoaderListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +45,14 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
@@ -144,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653664308231</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed some issues with Azure connection">
+      <created>1653668866188</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653668866188</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

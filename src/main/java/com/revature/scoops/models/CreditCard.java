@@ -1,7 +1,14 @@
 package com.revature.scoops.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Credit_Card")
 public class CreditCard {
 
+    @Id
     private String cc_number;
     private String cc_name;
     private int cvv;
@@ -20,6 +27,9 @@ public class CreditCard {
         this.zip=zip;
         this.customer_username=customer_username;
         this.limit=limit;
+    }
+    public CreditCard(){
+
     }
 
     public int getCvv() {

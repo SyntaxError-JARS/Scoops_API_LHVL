@@ -1,6 +1,13 @@
 package com.revature.scoops.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Menu")
 public class Menu {
+    @Id
     private int id;
     private String menuItem;
     private String comment;
