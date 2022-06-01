@@ -4,7 +4,7 @@ package com.revature.scoops.util;
 import com.revature.scoops.models.CreditCard;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.models.Menu;
-import com.revature.scoops.models.Order;
+import com.revature.scoops.models.Orders;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -49,7 +49,7 @@ hibernate.hbm2ddl.auto=update*/
             // ONE ADDITIONAL STEP I NEED TO INCLUDE
             configuration.addAnnotatedClass(Customer.class);
             configuration.addAnnotatedClass(Menu.class);
-            configuration.addAnnotatedClass(Order.class);
+            configuration.addAnnotatedClass(Orders.class);
             configuration.addAnnotatedClass(CreditCard.class);
 
             // ServiceRegistry

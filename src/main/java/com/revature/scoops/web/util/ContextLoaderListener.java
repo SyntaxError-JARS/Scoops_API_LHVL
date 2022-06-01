@@ -5,15 +5,12 @@ import com.revature.scoops.daos.CreditCardDao;
 import com.revature.scoops.daos.CustomerDao;
 import com.revature.scoops.daos.MenuDao;
 import com.revature.scoops.daos.OrderDao;
-import com.revature.scoops.models.CreditCard;
-import com.revature.scoops.models.Order;
 import com.revature.scoops.service.CreditCardServices;
 import com.revature.scoops.service.CustomerServices;
 import com.revature.scoops.service.MenuServices;
 import com.revature.scoops.service.OrderServices;
 import com.revature.scoops.web.servlets.*;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

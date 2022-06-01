@@ -1,30 +1,28 @@
 package com.revature.scoops.models;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Orders")
-public class Order {
+public class Orders {
     @Id
     private int id;
     private String menu_item;
     private String comment;
     private int is_favorite;
     private String order_date;
-    private String customer_name;
+    private String customer_username;
 
-    public Order(int id, String menu_item, String comment, int is_favorite, String order_date, String customer_name){
+    public Orders(int id, String menu_item, String comment, int is_favorite, String order_date, String customer_username){
         super();
         this.id=id;
         this.menu_item=menu_item;
         this.comment=comment;
         this.is_favorite=is_favorite;
         this.order_date=order_date;
-        this.customer_name=customer_name;
+        this.customer_username=customer_username;
     }
-    public Order (){
+    public Orders(){
 
     }
 
@@ -45,7 +43,7 @@ public class Order {
     }
 
     public String getCustomer_name() {
-        return customer_name;
+        return customer_username;
     }
 
     public String getMenu_item() {
@@ -69,7 +67,7 @@ public class Order {
     }
 
     public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+        this.customer_username = customer_name;
     }
 
     public void setMenu_item(String menu_item) {
@@ -84,6 +82,6 @@ public class Order {
                         "comment: " + comment + '\'' +
                         "is_favorite: " + is_favorite + '\'' +
                         "order_date: " + order_date + '\'' +
-                        "customer_name: " + customer_name + '\'';
+                        "customer_username: " + customer_username + '\'';
     }
 }

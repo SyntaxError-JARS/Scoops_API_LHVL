@@ -4,11 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.scoops.exceptions.InvalidRequestException;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
 import com.revature.scoops.models.CreditCard;
-import com.revature.scoops.models.Customer;
-import com.revature.scoops.models.Order;
 import com.revature.scoops.service.CreditCardServices;
-import com.revature.scoops.service.CustomerServices;
-import com.revature.scoops.service.OrderServices;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,8 +1,6 @@
 package com.revature.scoops.daos;
 
-import com.revature.scoops.models.Menu;
-import com.revature.scoops.models.Order;
-import com.revature.scoops.models.Customer;
+import com.revature.scoops.models.Orders;
 import com.revature.scoops.util.ConnectionFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,7 +11,7 @@ import java.io.*;
 import java.util.List;
 public class OrderDao {
 
-    public Order create(Order newOrder) {
+    public Orders create(Orders newOrder) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
@@ -29,11 +27,11 @@ public class OrderDao {
     }
 
 
-    public List<Order> findAll() {
+    public List<Orders> findAll() {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            List<Order> orders = session.createQuery("FROM Orders").list();
+            List<Orders> orders = session.createQuery("FROM Orders").list();
             transaction.commit();
             return orders;
         } catch (HibernateException | IOException e) {
@@ -46,12 +44,12 @@ public class OrderDao {
     }
 
 
-    public Order findById(String id) {
+    public Orders findById(String id) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Order order = session.get(Order.class, id);
+            Orders order = session.get(Orders.class, Integer.valueOf(id));
             transaction.commit();
             return order;
         } catch (HibernateException | IOException e) {
@@ -62,7 +60,7 @@ public class OrderDao {
         }
 
     }
-    public boolean update(Order updatedOrder) {
+    public boolean update(Orders updatedOrder) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
@@ -82,7 +80,7 @@ public class OrderDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Order order = session.load(Order.class, id);
+            Orders order = session.load(Orders.class, Integer.valueOf(id));
             session.remove(order);
             transaction.commit();
             return true;
@@ -94,7 +92,7 @@ public class OrderDao {
         }
     }
 
-    public Order authenticateOrder(String id, String password){
+    public Orders authenticateOrder(String id, String password){
 
         try {
             Session session = ConnectionFactory.getSession();
@@ -102,7 +100,7 @@ public class OrderDao {
             Query query = session.createQuery("from Orders where id= :id and password= :password");
             query.setParameter("id", id);
             query.setParameter("password", password);
-            Order order = (Order) query.uniqueResult();
+            Orders order = (Orders) query.uniqueResult();
             transaction.commit();
             return order;
         } catch (HibernateException | IOException e) {
@@ -120,7 +118,7 @@ public class OrderDao {
             Transaction transaction = session.beginTransaction();
             Query query = session.createQuery("from Orders where id= :id");
             query.setParameter("id", id);
-            Order order = (Order) query.uniqueResult();
+            Orders order = (Orders) query.uniqueResult();
             transaction.commit();
             if(order == null) return false;
             return true;
