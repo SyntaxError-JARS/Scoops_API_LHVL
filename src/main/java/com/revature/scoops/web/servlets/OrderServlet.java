@@ -1,15 +1,9 @@
 package com.revature.scoops.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.scoops.daos.CreditCardDao;
-import com.revature.scoops.daos.OrderDao;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
-import com.revature.scoops.models.Customer;
-import com.revature.scoops.models.Menu;
 import com.revature.scoops.models.Order;
-import com.revature.scoops.service.MenuServices;
 import com.revature.scoops.service.OrderServices;
-import com.revature.scoops.util.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

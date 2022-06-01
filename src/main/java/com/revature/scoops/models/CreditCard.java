@@ -1,8 +1,6 @@
 package com.revature.scoops.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "CreditCard")
@@ -15,6 +13,9 @@ public class CreditCard {
     private String exp_date;
     private int zip;
     private int limit;
+    //@OneToMany
+    //@JoinColumn(name = "Costomer", referencedColumnName = "username")
+
     private String customer_username;
 
 

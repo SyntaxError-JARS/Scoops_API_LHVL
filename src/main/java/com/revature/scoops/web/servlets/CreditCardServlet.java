@@ -1,6 +1,7 @@
 package com.revature.scoops.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.scoops.exceptions.InvalidRequestException;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
 import com.revature.scoops.models.CreditCard;
 import com.revature.scoops.models.Customer;
@@ -31,11 +32,6 @@ public class CreditCardServlet extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
-            return;
-        }
-
         if(req.getParameter("id") != null){
             CreditCard creditCard;
             try {
@@ -57,4 +53,82 @@ public class CreditCardServlet extends HttpServlet {
     }
 
 
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        //if(!checkAuth(req, resp)) return;
+        CreditCard authCreditCard = (CreditCard) req.getSession().getAttribute("authCreditCard");
+
+        CreditCard reqCreditCard = mapper.readValue(req.getInputStream(), CreditCard.class);
+
+        //if(authCreditCard.getUsername().equals(reqCreditCard.getUsername())) {
+
+        CreditCard updatedCreditCard = creditCardServices.update(reqCreditCard);
+
+        String payload = mapper.writeValueAsString(updatedCreditCard);
+        resp.getWriter().write(payload);
+        //} else {
+//            resp.getWriter().write("id provided does not match the user currently logged in");
+//            resp.setStatus(403);
+        //}
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        CreditCard persistedCreditCard;
+        try {
+            CreditCard creditCard = mapper.readValue(req.getInputStream(), CreditCard.class);
+            persistedCreditCard = creditCardServices.create(creditCard);
+        } catch (InvalidRequestException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+            return;
+        }
+        String payload = mapper.writeValueAsString(persistedCreditCard);
+
+        resp.getWriter().write("Persisted the provided CreditCard as show below \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        //if(!checkAuth(req,resp)) return;
+        if(req.getParameter("id") == null){
+            resp.getWriter().write("In order to delete, please provide your user id as a verification into the url with ?id=your@id.here");
+            resp.setStatus(401);
+            return;
+        }
+
+        String username = req.getParameter("id");
+        CreditCard authCreditCard = (CreditCard) req.getSession().getAttribute("authCreditCard");
+
+//        if(!authCreditCard.getUsername().equals(username)){
+//            resp.getWriter().write("username provided does not match the user logged in, double check for confirmation of deletion");
+//            return;
+//        }
+
+        try {
+            creditCardServices.delete(username);
+            resp.getWriter().write("Delete CreditCard from the database");
+            req.getSession().invalidate();
+        } catch (ResourcePersistanceException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+        } catch (Exception e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(500);
+        }
+    }
 }

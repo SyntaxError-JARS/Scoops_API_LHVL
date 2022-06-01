@@ -1,7 +1,9 @@
 package com.revature.scoops.web.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.scoops.exceptions.InvalidRequestException;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
+import com.revature.scoops.models.CreditCard;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.models.Menu;
 import com.revature.scoops.service.CustomerServices;
@@ -54,4 +56,81 @@ public class MenuServlet extends HttpServlet {
     }
 
 
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        //if(!checkAuth(req, resp)) return;
+        Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
+
+        Menu reqMenu = mapper.readValue(req.getInputStream(), Menu.class);
+
+        //if(authMenu.getUsername().equals(reqMenu.getUsername())) {
+
+        Menu updatedMenu = menuServices.update(reqMenu);
+
+        String payload = mapper.writeValueAsString(updatedMenu);
+        resp.getWriter().write(payload);
+        //} else {
+//            resp.getWriter().write("id provided does not match the user currently logged in");
+//            resp.setStatus(403);
+        //}
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        Menu persistedMenu;
+        try {
+            Menu menu = mapper.readValue(req.getInputStream(), Menu.class);
+            persistedMenu = menuServices.create(menu);
+        } catch (InvalidRequestException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+            return;
+        }
+        String payload = mapper.writeValueAsString(persistedMenu);
+
+        resp.getWriter().write("Persisted the provided Menu as show below \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        //if(!checkAuth(req,resp)) return;
+        if(req.getParameter("id") == null){
+            resp.getWriter().write("In order to delete, please provide your user id as a verification into the url with ?id=your@id.here");
+            resp.setStatus(401);
+            return;
+        }
+
+        String username = req.getParameter("id");
+        Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
+
+//        if(!authMenuCard.getUsername().equals(username)){
+//            resp.getWriter().write("username provided does not match the user logged in, double check for confirmation of deletion");
+//            return;
+//        }
+
+        try {
+            menuServices.delete(username);
+            resp.getWriter().write("Delete Menu from the database");
+            req.getSession().invalidate();
+        } catch (ResourcePersistanceException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+        } catch (Exception e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(500);
+        }
+    }
 }

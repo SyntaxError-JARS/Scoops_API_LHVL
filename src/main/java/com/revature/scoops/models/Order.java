@@ -2,9 +2,7 @@ package com.revature.scoops.models;
 
 import com.sun.org.apache.xpath.internal.operations.Or;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Orders")

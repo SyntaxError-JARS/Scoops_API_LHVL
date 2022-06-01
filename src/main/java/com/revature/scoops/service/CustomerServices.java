@@ -5,7 +5,7 @@ import com.revature.scoops.exceptions.InvalidRequestException;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
 import com.revature.scoops.daos.CustomerDao;
 import com.revature.scoops.models.Customer;
-import com.revature.scoops.util.Logger;
+import com.revature.scoops.util.logging.Logger;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public class CustomerServices {
 
     public Customer create(Customer newCustomer){
         System.out.println("Customer trying to be registered: " + newCustomer);
-//        logger.info("Customer trying to be registered: " + newCustomer);
+        logger.info("Customer trying to be registered: ");
 //        if(!validateInput(newCustomer)){ // checking if false
 //            // TODO: throw - what's this keyword?
 //            throw new InvalidRequestException("User input was not validated, either empty String or null values");
