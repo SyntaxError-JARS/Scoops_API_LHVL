@@ -5,6 +5,7 @@ import com.revature.scoops.daos.CreditCardDao;
 import com.revature.scoops.daos.OrderDao;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
 import com.revature.scoops.models.Customer;
+import com.revature.scoops.models.Menu;
 import com.revature.scoops.models.Order;
 import com.revature.scoops.service.MenuServices;
 import com.revature.scoops.service.OrderServices;
@@ -37,6 +38,7 @@ public class OrderServlet extends HttpServlet {
         }
 
         if(req.getParameter("id") != null){
+            System.out.println("test 1");
             Order order;
             try {
                 order = orderServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
@@ -49,7 +51,9 @@ public class OrderServlet extends HttpServlet {
             resp.getWriter().write(payload);
             return;
         }
+        System.out.println("test 2");
         List<Order> orders = orderServices.readAll();
+        System.out.println("test 4");
         String payload = mapper.writeValueAsString(orders);
 
         resp.getWriter().write(payload);

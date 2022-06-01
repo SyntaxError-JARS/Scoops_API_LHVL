@@ -41,15 +41,11 @@ public class CustomerServlet extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
-            return;
-        }
 
-        if(req.getParameter("id") != null){
+        if(req.getParameter("username") != null){
             Customer Customer;
             try {
-                Customer = CustomerServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                Customer = CustomerServices.readById(req.getParameter("username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
             } catch (ResourcePersistanceException e){
                 resp.setStatus(404);
                 resp.getWriter().write(e.getMessage());
@@ -72,21 +68,21 @@ public class CustomerServlet extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
+        //if(!checkAuth(req, resp)) return;
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
 
         Customer reqCustomer = mapper.readValue(req.getInputStream(), Customer.class);
 
-        if(authCustomer.getUsername().equals(reqCustomer.getUsername())) {
+        //if(authCustomer.getUsername().equals(reqCustomer.getUsername())) {
 
             Customer updatedCustomer = CustomerServices.update(reqCustomer);
 
             String payload = mapper.writeValueAsString(updatedCustomer);
             resp.getWriter().write(payload);
-        } else {
-            resp.getWriter().write("Email provided does not match the user currently logged in");
-            resp.setStatus(403);
-        }
+        //} else {
+//            resp.getWriter().write("id provided does not match the user currently logged in");
+//            resp.setStatus(403);
+        //}
 
     }
 
@@ -117,23 +113,23 @@ public class CustomerServlet extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        if(!checkAuth(req,resp)) return;
-        if(req.getParameter("email") == null){
-            resp.getWriter().write("In order to delete, please provide your user email as a verification into the url with ?email=your@email.here");
+        //if(!checkAuth(req,resp)) return;
+        if(req.getParameter("username") == null){
+            resp.getWriter().write("In order to delete, please provide your user id as a verification into the url with ?id=your@id.here");
             resp.setStatus(401);
             return;
         }
 
-        String email = req.getParameter("email");
+        String username = req.getParameter("username");
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
 
-        if(!authCustomer.getUsername().equals(email)){
-            resp.getWriter().write("Email provided does not match the user logged in, double check for confirmation of deletion");
-            return;
-        }
+//        if(!authCustomer.getUsername().equals(username)){
+//            resp.getWriter().write("username provided does not match the user logged in, double check for confirmation of deletion");
+//            return;
+//        }
 
         try {
-            CustomerServices.delete(email);
+            CustomerServices.delete(username);
             resp.getWriter().write("Delete user from the database");
             req.getSession().invalidate();
         } catch (ResourcePersistanceException e){

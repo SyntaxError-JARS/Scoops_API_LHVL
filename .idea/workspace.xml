@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Fixed some issues with Azure connection">
+    <list default="true" id="d286a2bd-fe9d-4e01-8a8e-65bdb33e060e" name="Changes" comment="Added hibernate ConnectionFactory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CreditCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CreditCardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/MenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/CustomerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/daos/OrderDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/models/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CreditCardServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/CustomerServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/MenuServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/service/OrderServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CreditCardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/dto/LoginCreds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/dto/LoginCreds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/CustomerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/MenuServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/servlets/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/scoops/web/util/ContextLoaderListener.java" afterDir="false" />
@@ -37,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="levi" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +55,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>

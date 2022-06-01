@@ -8,76 +8,50 @@ import javax.persistence.Table;
 @Table(name = "Menu")
 public class Menu {
     @Id
-    private int id;
-    private String menuItem;
-    private String comment;
-    private boolean is_favorite;
-    private String order_date;
-    private String customerUsername;
+    private String item_name;
+    private int cost;
+    private String color;
 
-    public Menu(int id, String menuItem, String comment, boolean is_favorite, String order_date, String customerUsername){
+
+    public Menu(String item_name, int cost, String color){
         super();
-        this.id =id;
-        this.menuItem=menuItem;
-        this.comment=comment;
-        this.is_favorite=is_favorite;
-        this.order_date=order_date;
-        this.customerUsername=customerUsername;
+        this.item_name = item_name;
+        this.cost = cost;
+        this.color =color;
     }
     public Menu(){
 
     }
 
-    public int getId() {
-        return id;
+    public String getColor() {
+        return color;
     }
 
-    public String getComment() {
-        return comment;
+    public int getCost() {
+        return cost;
     }
 
-    public String getCustomerUsername() {
-        return customerUsername;
+    public String getItem_name() {
+        return item_name;
     }
 
-    public String getMenuItem() {
-        return menuItem;
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setItem_name(String item_name) {
+        this.item_name = item_name;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public void setCustomerUsername(String customerUsername) {
-        this.customerUsername = customerUsername;
-    }
-
-    public void setIs_favorite(boolean is_favorite) {
-        this.is_favorite = is_favorite;
-    }
-
-    public void setMenuItem(String menuItem) {
-        this.menuItem = menuItem;
-    }
-
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
-    }
     @Override // What this is?? Annotation - basically metadata
     public String toString() {
         return
-                "id: " + id + '\'' +
-                        "menuItem: " + menuItem + '\'' +
-                        "| is_favorite: " + is_favorite + '\'' +
-                        "| order_date: " + order_date + '\'' +
-                        "| customerUsername: " + customerUsername + '\'';
+                "item_name: " + item_name + '\'' +
+                        "cost: " + cost + '\'' +
+                        "| color: " + color + '\'';
     }
 }

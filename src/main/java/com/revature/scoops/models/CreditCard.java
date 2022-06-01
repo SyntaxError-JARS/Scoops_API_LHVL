@@ -5,24 +5,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Credit_Card")
+@Table(name = "CreditCard")
 public class CreditCard {
 
     @Id
     private String cc_number;
     private String cc_name;
-    private int cvv;
+    private int ccv;
     private String exp_date;
     private int zip;
-    private String customer_username;
     private int limit;
+    private String customer_username;
 
 
-    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, String customer_username, int limit) {
+    public CreditCard(String cc_number, String cc_name, int ccv, String exp_date, int zip, String customer_username, int limit) {
         super();
         this.cc_name = cc_name;
         this.cc_number = cc_number;
-        this.cvv =cvv;
+        this.ccv =ccv;
         this.exp_date =exp_date;
         this.zip=zip;
         this.customer_username=customer_username;
@@ -33,7 +33,7 @@ public class CreditCard {
     }
 
     public int getCvv() {
-        return cvv;
+        return ccv;
     }
 
     public int getLimit() {
@@ -73,7 +73,7 @@ public class CreditCard {
     }
 
     public void setCvv(int cvv) {
-        this.cvv = cvv;
+        this.ccv = cvv;
     }
 
     public void setExp_date(String exp_date) {

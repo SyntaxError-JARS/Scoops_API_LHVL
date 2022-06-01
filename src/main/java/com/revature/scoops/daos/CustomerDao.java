@@ -44,12 +44,12 @@ public class CustomerDao {
     }
 
 
-    public Customer findById(String email) {
+    public Customer findByUsername(String username) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Customer customer = session.get(Customer.class, email);
+            Customer customer = session.get(Customer.class, username);
             transaction.commit();
             return customer;
         } catch (HibernateException | IOException e) {
@@ -76,11 +76,11 @@ public class CustomerDao {
     }
 
 
-    public boolean delete(String email) {
+    public boolean delete(String username) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Customer customer = session.load(Customer.class, email);
+            Customer customer = session.load(Customer.class, username);
             session.remove(customer);
             transaction.commit();
             return true;
@@ -92,13 +92,13 @@ public class CustomerDao {
         }
     }
 
-    public Customer authenticateCustomer(String email, String password){
+    public Customer authenticateCustomer(String username, String password){
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Customer where email= :email and password= :password");
-            query.setParameter("email", email);
+            Query query = session.createQuery("from Customer where username= :username and password= :password");
+            query.setParameter("username", username);
             query.setParameter("password", password);
             Customer customer = (Customer) query.uniqueResult();
             transaction.commit();
@@ -111,13 +111,13 @@ public class CustomerDao {
         }
 
     }
-    public boolean checkEmail(String email) {
+    public boolean checkUsername(String username) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Customer where email= :email");
-            query.setParameter("email", email);
+            Query query = session.createQuery("from Customer where username= :username");
+            query.setParameter("username", username);
             Customer customer = (Customer) query.uniqueResult();
             transaction.commit();
             if(customer == null) return false;

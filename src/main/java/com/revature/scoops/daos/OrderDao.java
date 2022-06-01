@@ -1,5 +1,6 @@
 package com.revature.scoops.daos;
 
+import com.revature.scoops.models.Menu;
 import com.revature.scoops.models.Order;
 import com.revature.scoops.models.Customer;
 import com.revature.scoops.util.ConnectionFactory;
@@ -32,7 +33,7 @@ public class OrderDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            List<Order> orders = session.createQuery("FROM Order").list();
+            List<Order> orders = session.createQuery("FROM Orders").list();
             transaction.commit();
             return orders;
         } catch (HibernateException | IOException e) {
@@ -45,12 +46,12 @@ public class OrderDao {
     }
 
 
-    public Order findById(String email) {
+    public Order findById(String id) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Order order = session.get(Order.class, email);
+            Order order = session.get(Order.class, id);
             transaction.commit();
             return order;
         } catch (HibernateException | IOException e) {
@@ -77,11 +78,11 @@ public class OrderDao {
     }
 
 
-    public boolean delete(String email) {
+    public boolean delete(String id) {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Order order = session.load(Order.class, email);
+            Order order = session.load(Order.class, id);
             session.remove(order);
             transaction.commit();
             return true;
@@ -93,13 +94,13 @@ public class OrderDao {
         }
     }
 
-    public Order authenticateOrder(String email, String password){
+    public Order authenticateOrder(String id, String password){
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Order where email= :email and password= :password");
-            query.setParameter("email", email);
+            Query query = session.createQuery("from Orders where id= :id and password= :password");
+            query.setParameter("id", id);
             query.setParameter("password", password);
             Order order = (Order) query.uniqueResult();
             transaction.commit();
@@ -112,13 +113,13 @@ public class OrderDao {
         }
 
     }
-    public boolean checkEmail(String email) {
+    public boolean checkId(String id) {
 
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Order where email= :email");
-            query.setParameter("email", email);
+            Query query = session.createQuery("from Orders where id= :id");
+            query.setParameter("id", id);
             Order order = (Order) query.uniqueResult();
             transaction.commit();
             if(order == null) return false;

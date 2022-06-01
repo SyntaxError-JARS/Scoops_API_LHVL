@@ -7,52 +7,85 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "Orders")
 public class Order {
     @Id
-    private String itemName;
-    private int cost;
-    private String color;
+    private int id;
+    private String menu_item;
+    private String comment;
+    private int is_favorite;
+    private String order_date;
+    private String customer_name;
 
-    public Order(String itemName, int cost, String color){
+    public Order(int id, String menu_item, String comment, int is_favorite, String order_date, String customer_name){
         super();
-        this.itemName = itemName;
-        this.cost = cost;
-        this.color = color;
+        this.id=id;
+        this.menu_item=menu_item;
+        this.comment=comment;
+        this.is_favorite=is_favorite;
+        this.order_date=order_date;
+        this.customer_name=customer_name;
     }
     public Order (){
 
     }
 
-    public int getCost() {
-        return cost;
+    public String getOrder_date() {
+        return order_date;
     }
 
-    public String getColor() {
-        return color;
+    public String getComment() {
+        return comment;
     }
 
-    public String getItemName() {
-        return itemName;
+    public int getId() {
+        return id;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public int getIs_favorite() {
+        return is_favorite;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public String getCustomer_name() {
+        return customer_name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public String getMenu_item() {
+        return menu_item;
+    }
+
+    public void setOrder_date(String order_date) {
+        this.order_date = order_date;
+    }
+
+    public void setIs_favorite(int is_favorite) {
+        this.is_favorite = is_favorite;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+    }
+
+    public void setMenu_item(String menu_item) {
+        this.menu_item = menu_item;
     }
 
     @Override // What this is?? Annotation - basically metadata
     public String toString() {
         return
-                "itemName: " + itemName + '\'' +
-                        "cost: " + cost + '\'' +
-                        "| color: " + color + '\'';
+                "id: " + id + '\'' +
+                        "menu_item: " + menu_item + '\'' +
+                        "comment: " + comment + '\'' +
+                        "is_favorite: " + is_favorite + '\'' +
+                        "order_date: " + order_date + '\'' +
+                        "customer_name: " + customer_name + '\'';
     }
 }

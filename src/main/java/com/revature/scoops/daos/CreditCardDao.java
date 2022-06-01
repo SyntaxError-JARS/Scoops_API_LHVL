@@ -31,7 +31,7 @@ public class CreditCardDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            List<CreditCard> creditCards = session.createQuery("FROM Credit_Card").list();
+            List<CreditCard> creditCards = session.createQuery("FROM CreditCard").list();
             transaction.commit();
             return creditCards;
         } catch (HibernateException | IOException e) {
@@ -97,7 +97,7 @@ public class CreditCardDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Credit_Card where email= :email and password= :password");
+            Query query = session.createQuery("from CreditCard where email= :email and password= :password");
             query.setParameter("email", email);
             query.setParameter("password", password);
             CreditCard creditCard = (CreditCard) query.uniqueResult();
@@ -116,7 +116,7 @@ public class CreditCardDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Credit_Card where email= :email");
+            Query query = session.createQuery("from CreditCard where email= :email");
             query.setParameter("email", email);
             CreditCard creditCard = (CreditCard) query.uniqueResult();
             transaction.commit();

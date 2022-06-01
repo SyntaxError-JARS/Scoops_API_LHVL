@@ -26,9 +26,9 @@ public class CustomerServices {
     }
 
 
-    public Customer readById(String id) throws ResourcePersistanceException{
+    public Customer readById(String username) throws ResourcePersistanceException{
 
-        Customer customer = customerDao.findById(id);
+        Customer customer = customerDao.findByUsername(username);
         return customer;
     }
 
@@ -40,32 +40,35 @@ public class CustomerServices {
         return updatedCustomer;
     }
 
-    public boolean delete(String email) {
-        return customerDao.delete(email);
+    public boolean delete(String username) {
+        return customerDao.delete(username);
     }
 
-    public boolean validateEmailNotUsed(String email){
-        return customerDao.checkEmail(email);
+    public boolean validateIdNotUsed(String username){
+        return customerDao.checkUsername(username);
     }
 
     public Customer create(Customer newCustomer){
-        logger.info("Customer trying to be registered: " + newCustomer);
-        if(!validateInput(newCustomer)){ // checking if false
-            // TODO: throw - what's this keyword?
-            throw new InvalidRequestException("User input was not validated, either empty String or null values");
-        }
+        System.out.println("Customer trying to be registered: " + newCustomer);
+//        logger.info("Customer trying to be registered: " + newCustomer);
+//        if(!validateInput(newCustomer)){ // checking if false
+//            // TODO: throw - what's this keyword?
+//            throw new InvalidRequestException("User input was not validated, either empty String or null values");
+//        }
+//
+//        // TODO: Will implement with JDBC (connecting to our database)
+//        if(validateIdNotUsed(newCustomer.getUsername())){
+//            throw new InvalidRequestException("User username is already in use. Please try again with another username or login into previous made account.");
+//        }
 
-        // TODO: Will implement with JDBC (connecting to our database)
-        if(validateEmailNotUsed(newCustomer.getUsername())){
-            throw new InvalidRequestException("User email is already in use. Please try again with another email or login into previous made account.");
-        }
-
+        System.out.println("before issue?");
         Customer persistedCustomer = customerDao.create(newCustomer);
+        System.out.println("before issue????");
 
         if(persistedCustomer == null){
             throw new ResourcePersistanceException("Customer was not persisted to the database upon registration");
         }
-        logger.info("Customer has been persisted: " + newCustomer);
+//        logger.info("Customer has been persisted: " + newCustomer);
         return persistedCustomer;
     }
 
@@ -81,7 +84,7 @@ public class CustomerServices {
     public Customer authenticateCustomer(String username, String password){
 
         if(password == null || password.trim().equals("") || username == null || username.trim().equals("")) {
-            throw new InvalidRequestException("Either email or password is an invalid entry. Please try logging in again");
+            throw new InvalidRequestException("Either username or password is an invalid entry. Please try logging in again");
         }
 
         Customer authenticatedCustomer = customerDao.authenticateCustomer(username, password);

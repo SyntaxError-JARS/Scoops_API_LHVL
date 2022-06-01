@@ -47,8 +47,8 @@ public class MenuServlet extends HttpServlet {
             return;
         }
 
-        List<Menu> Menus = menuServices.readAll();
-        String payload = mapper.writeValueAsString(Menus);
+        List<Menu> menus = menuServices.readAll();
+        String payload = mapper.writeValueAsString(menus);
 
         resp.getWriter().write(payload);
     }

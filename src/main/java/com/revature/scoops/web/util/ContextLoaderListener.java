@@ -49,8 +49,8 @@ public class ContextLoaderListener implements ServletContextListener {
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
         context.addServlet("OrderServlet", orderServlet).addMapping("/orders/*");
         context.addServlet("CustomerServlet", customerServlet).addMapping("/customers/*");
-        context.addServlet("Menu", menuServlet).addMapping("/Menu/*");
-        context.addServlet("CreditCard", creditCardServlet).addMapping("/CreditCard/*");
+        context.addServlet("Menu", menuServlet).addMapping("/menus/*");
+        context.addServlet("CreditCard", creditCardServlet).addMapping("/creditcards/*");
 
     }
 

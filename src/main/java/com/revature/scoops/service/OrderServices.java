@@ -4,10 +4,12 @@ import com.revature.scoops.daos.CreditCardDao;
 import com.revature.scoops.daos.MenuDao;
 import com.revature.scoops.daos.OrderDao;
 import com.revature.scoops.exceptions.ResourcePersistanceException;
+import com.revature.scoops.models.Menu;
 import com.revature.scoops.models.Order;
 import com.revature.scoops.util.Logger;
 
 import java.util.List;
+
 
 public class OrderServices {
     private OrderDao orderDao;
@@ -15,7 +17,7 @@ public class OrderServices {
     public OrderServices(OrderDao orderDao) {
     }
     public List<Order> readAll(){
-        // TODO: What OrderDao intellisense telling me?
+        System.out.println("Made it to readAll()");
         List<Order> orders = orderDao.findAll();
         return orders;
     }

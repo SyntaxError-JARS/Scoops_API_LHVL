@@ -35,8 +35,8 @@ public class MenuServices {
         return updatedMenu;
     }
 
-    public boolean delete(String email) {
-        return menuDao.delete(email);
+    public boolean delete(String id) {
+        return menuDao.delete(id);
     }
 
 }
