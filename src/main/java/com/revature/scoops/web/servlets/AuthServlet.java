@@ -8,6 +8,7 @@ import com.revature.scoops.service.CustomerServices;
 import com.revature.scoops.web.dto.LoginCreds;
 
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,9 +25,19 @@ public class AuthServlet extends HttpServlet {
         this.customerServices = customerServices;
         this.mapper = mapper;
     }
+    @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doOptions(req, resp);
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
         try {
             LoginCreds loginCreds = mapper.readValue(req.getInputStream(), LoginCreds.class);
