@@ -37,11 +37,6 @@ public class MenuServlet extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
-            return;
-        }
-
         if(req.getParameter("id") != null){
             Menu menu;
             try {
