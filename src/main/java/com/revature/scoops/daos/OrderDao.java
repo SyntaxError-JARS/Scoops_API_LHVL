@@ -49,7 +49,7 @@ public class OrderDao {
         try {
             Session session = ConnectionFactory.getSession();
             Transaction transaction = session.beginTransaction();
-            Orders order = session.get(Orders.class, Integer.valueOf(id));
+            Orders order = session.get(Orders.class, id);
             transaction.commit();
             return order;
         } catch (HibernateException | IOException e) {
